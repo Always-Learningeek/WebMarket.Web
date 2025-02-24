@@ -17,5 +17,10 @@ namespace WebMarket.Web.Controllers
             IEnumerable<Category> CategoryList = _db.Categories;
             return View(CategoryList);
         }
+
+        public IActionResult create()
+        {
+	        return View();
+        }
     }
 }
