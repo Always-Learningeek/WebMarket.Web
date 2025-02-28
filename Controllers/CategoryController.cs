@@ -17,10 +17,19 @@ namespace WebMarket.Web.Controllers
             IEnumerable<Category> CategoryList = _db.Categories;
             return View(CategoryList);
         }
-
-        public IActionResult create()
+        //Get
+        public IActionResult Create()
         {
 	        return View();
+        }
+
+        //post
+        [HttpPost]
+        public IActionResult Create(Category obj) 
+        {
+            _db.Categories.Add(obj);
+            _db.SaveChanges();
+            return View();
         }
     }
 }

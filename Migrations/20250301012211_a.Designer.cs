@@ -12,8 +12,8 @@ using WebMarket.Web.Data;
 namespace WebMarket.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250223205137_AddCategoryTbl")]
-    partial class AddCategoryTbl
+    [Migration("20250301012211_a")]
+    partial class a
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
