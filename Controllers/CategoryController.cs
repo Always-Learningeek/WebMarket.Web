@@ -22,14 +22,19 @@ namespace WebMarket.Web.Controllers
         {
 	        return View();
         }
-
         //post
         [HttpPost]
-        public IActionResult Create(Category obj) 
+        public IActionResult Create(Category obj)
         {
-            _db.Categories.Add(obj);
-            _db.SaveChanges();
-            return View();
+            if (ModelState.IsValid) 
+            {
+                _db.Categories.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("index");
+            }
+            return View(obj);
+
         }
+
     }
 }
