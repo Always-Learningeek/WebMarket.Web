@@ -26,6 +26,10 @@ namespace WebMarket.Web.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            if (obj.Name == obj.DisplayOrder.ToString()) 
+            {
+                ModelState.AddModelError("Name", "نام نباید کپی و مانند ترتیب نمایش باشد.");
+            }
             if (ModelState.IsValid) 
             {
                 _db.Categories.Add(obj);

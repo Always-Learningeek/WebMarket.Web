@@ -9,6 +9,7 @@
 			<h2>ایجاد دسته</h2>
 			<hr />
 		</div>
+		@*<div asp-validation-summary="All" class="text-danger"></div>*@
 		<div class="mb-3">
 			<label asp-for="Name"></label>
 			<input asp-for="Name" class="form-control" />
@@ -25,4 +26,9 @@
 		</a>
 	</div>
 </form>
+
+@section Scripts 
+{
+	<partial name="_validationScriptsPartial" />
+}
 
